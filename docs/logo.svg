@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="cyber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bd00ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer Hexagon Frame -->
+  <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="url(#cyber-gradient)" stroke-width="4" filter="url(#glow)"/>
+  
+  <!-- Inner Waveform / 'V' Shape -->
+  <path d="M25,35 L50,75 L75,35 M50,75 L50,55" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Digital Dots -->
+  <circle cx="50" cy="20" r="3" fill="#00f3ff" filter="url(#glow)"/>
+  <circle cx="20" cy="50" r="2" fill="#bd00ff" opacity="0.7"/>
+  <circle cx="80" cy="50" r="2" fill="#bd00ff" opacity="0.7"/>
+</svg>

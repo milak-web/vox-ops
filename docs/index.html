@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX OPS - The Next-Gen Voice Engine</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="VOX OPS is a free, open-source, privacy-first AI voice assistant for gamers. Control your PC with zero latency, offline recognition, and custom macros.">
+    <meta name="keywords" content="voice control, gaming voice ai, open source, privacy focused, offline speech recognition, elite dangerous voice attack alternative, star citizen voice commands, low latency voice macro, vox ops, voice ops, python voice assistant">
+    <meta name="author" content="VOX OPS Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="VOX OPS: Control Your Reality">
+    <meta property="og:description" content="The offline, privacy-first AI voice assistant designed for gamers. Zero latency. 100% Free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pyvoice-community.onrender.com/">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.svg" alt="VOX OPS Logo" style="height: 32px; vertical-align: middle; margin-right: 10px;">
+            VOX<span class="dot">.</span>OPS
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#community">Community</a>
+            <a href="#download" class="btn-nav">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="VOX OPS: CONTROL YOUR REALITY">VOX OPS: CONTROL YOUR REALITY</h1>
+            <p class="subtitle">Don't just play the game—<span class="highlight">command it</span>. Turn your voice into your ultimate weapon and experience gaming that feels truly alive.</p>
+            <div class="cta-group">
+                <!-- TODO: Replace YOUR_USERNAME and YOUR_REPO with your actual GitHub info after creating the release -->
+                <a href="https://github.com/YOUR_USERNAME/vox-ops/releases/download/v1.0/VOX_OPS.zip" class="btn-primary"><i class="fas fa-download"></i> Download v1.0</a>
+                <a href="#features" class="btn-secondary"><i class="fas fa-info-circle"></i> Learn More</a>
+            </div>
+            <div class="terminal-preview">
+                <div class="terminal-header">
+                    <span class="circle red"></span>
+                    <span class="circle yellow"></span>
+                    <span class="circle green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> vox-ops start --mode=immersive</p>
+                    <p class="output">>> System Online. Listening...</p>
+                    <p class="output">>> User: "Engage Hyperdrive"</p>
+                    <p class="output">>> Action: Diverting Power to Engines [100%]</p>
+                    <p class="output">>> Action: Charging FSD... <span class="highlight">JUMP READY</span></p>
+                </div>
+            </div>
+
+            <!-- LIVE ANIMATION DEMO -->
+            <div class="voice-demo-container">
+                <!-- Step 1: Voice Input -->
+                <div class="demo-step" id="step1">
+                    <i class="fas fa-microphone demo-icon"></i>
+                    <div class="demo-text">"Engage Shields!"</div>
+                </div>
+                
+                <!-- Line -->
+                <div class="demo-line" id="line1"></div>
+                
+                <!-- Step 2: Processing -->
+                <div class="demo-step" id="step2">
+                    <i class="fas fa-wave-square demo-icon"></i>
+                    <div class="demo-text">Processing...</div>
+                </div>
+                
+                <!-- Line -->
+                <div class="demo-line" id="line2"></div>
+                
+                <!-- Step 3: Action -->
+                <div class="demo-step" id="step3">
+                    <i class="fas fa-shield-alt demo-icon"></i>
+                    <div class="demo-text">SHIELDS UP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why VOX OPS?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-bolt icon"></i>
+                <h3>Instant Reflexes</h3>
+                <p>Your voice is faster than your fingers. Execute complex combos and commands instantly with zero latency.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-secret icon"></i>
+                <h3>Ghost Mode Privacy</h3>
+                <p>Your voice never leaves your machine. 100% offline processing keeps your data secure and your comms clear.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-network-wired icon"></i>
+                <h3>Community Arsenal</h3>
+                <p>Tap into thousands of tactical profiles. Download mission-critical macros created by elite players worldwide.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-vr-cardboard icon"></i>
+                <h3>Total Immersion</h3>
+                <p>Feel the game come alive. Talk to your ship, your squad, or your OS naturally. The HUD keeps you in the zone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY SECTION -->
+    <section id="community" class="community">
+        <div class="community-content">
+            <h2>Join the Collective</h2>
+            <p>Access thousands of custom commands, macros, and automation scripts created by users like you.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="count">500+</span>
+                    <span class="label">Profiles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="count">Zero</span>
+                    <span class="label">Cloud Fees</span>
+                </div>
+                <div class="stat-item">
+                    <span class="count">100%</span>
+                    <span class="label">Open Source</span>
+                </div>
+            </div>
+            <a href="https://pyvoice-community.onrender.com" target="_blank" class="btn-outline">Browse Profiles</a>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD / FOOTER -->
+    <footer id="download">
+        <div class="footer-content">
+            <h2>Ready to Upgrade?</h2>
+            <p>VOX OPS is currently in closed beta. Join the waitlist for the full release.</p>
+            <div class="download-options">
+                <button class="btn-primary large" onclick="alert('Release Build In Progress. Stay Tuned!')"><i class="fas fa-rocket"></i> Join Waitlist</button>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 VOX OPS Team. All systems operational.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
