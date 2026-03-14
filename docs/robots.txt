@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://milak-web.github.io/vox-ops/sitemap.xml

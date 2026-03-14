@@ -1,0 +1,104 @@
+
+/* ANIMATION CONTAINER */
+.voice-demo-container {
+    margin-top: 4rem;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 120px;
+    background: rgba(19, 19, 31, 0.5);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+/* STEP 1: USER VOICE */
+.demo-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.demo-step.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.demo-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.demo-step.active .demo-icon {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.demo-text {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.demo-step.active .demo-text {
+    color: #fff;
+}
+
+/* CONNECTING LINES */
+.demo-line {
+    flex-grow: 1;
+    height: 2px;
+    background: #333;
+    margin: 0 1rem;
+    position: relative;
+    top: -10px;
+}
+
+.demo-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    transition: width 0.5s linear;
+}
+
+.demo-line.active::after {
+    width: 100%;
+}
+
+/* PULSE EFFECT FOR MIC */
+@keyframes mic-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.4); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(0, 243, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
+}
+
+.demo-step.active .fa-microphone {
+    animation: mic-pulse 1.5s infinite;
+}
+
+/* ACTION SUCCESS FLASH */
+.demo-step.success .demo-icon {
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--accent);
+}
+
+.demo-step.success .demo-text {
+    color: var(--accent);
+}
