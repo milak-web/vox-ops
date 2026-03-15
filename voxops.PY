@@ -736,8 +736,11 @@ PRESETS = {
 }
 
 # Helper for About Text
-ABOUT_TEXT = """VOX OPS Control Suite v6.3
-Professional Offline Voice Automation
+ABOUT_TEXT = """VOX OPS Control Suite v6.4
+The Next-Gen Voice Engine for Gamers
+
+Website: https://milak-web.github.io/vox-ops/
+GitHub: https://github.com/milak-web/vox-ops
 
 POWERED BY:
 • Vosk API (Alpha Cephei) - Offline Speech Recognition
