@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge Pro - AI Image Assistant</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖌️</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">🖌️</div>
+                    <div>
+                        <div class="logo-text"><span>PixelForge Pro</span></div>
+                        <div class="logo-tagline"><span>AI Image Assistant</span></div>
+                    </div>
+                </div>
+                <button class="mobile-close-btn" id="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active" data-tab="layers">
+                    <div class="icon">🖼️</div>
+                    <span>Layers</span>
+                </div>
+                <div class="nav-item" data-tab="models">
+                    <div class="icon">🧠</div>
+                    <span>Models</span>
+                </div>
+                <div class="nav-item" data-tab="evolution">
+                    <div class="icon">🚀</div>
+                    <span>Evolution</span>
+                </div>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Layers</span>
+                    <span class="stat-value" id="layers-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Images</span>
+                    <span class="stat-value" id="images-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Models</span>
+                    <span class="stat-value" id="models-count">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="page-title">
+                    <span class="icon" id="page-icon">🖼️</span>
+                    <span id="page-title">Layers</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <div class="search-bar">
+                        <i class="search-icon fas fa-search"></i>
+                        <input type="text" placeholder="Search layers, models, or images..." id="search-input">
+                    </div>
+                    
+                    <button class="btn btn-icon btn-outline" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <!-- Layers Tab -->
+                <div class="tab-content active" id="layers-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><span>Image Layers</span></h3>
+                            <button class="btn btn-primary" id="add-layer-btn">
+                                <i class="fas fa-plus"></i> <span>Add Layer</span>
+                            </button>
+                        </div>
+                        <div class="layers-list" id="layers-list">
+                            <div class="empty-state" style="text-align: center; padding: 60px; color: var(--light-muted);">
+                                <div style="font-size: 48px; margin-bottom: 16px;">🖼️</div>
+                                <h3 style="margin-bottom: 12px; font-size: 18px;">No Layers Yet</h3>
+                                <p style="margin-bottom: 24px;">Create your first layer to start building prompts</p>
+                                <button class="btn btn-primary" id="create-first-layer">➕ Create First Layer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Models Tab -->
+                <div class="tab-content" id="models-tab">
+                    <div class="card h-full">
+                        <div class="card-header">
+                            <h3 class="card-title"><span>AI Models Library</span></h3>
+                            <button class="btn btn-primary" id="add-model-btn">
+                                <i class="fas fa-plus"></i> <span>Add Model</span>
+                            </button>
+                        </div>
+                        <div class="models-list-container">
+                            <div class="models-list" id="models-list">
+                                <div class="empty-state" style="text-align: center; padding: 60px; color: var(--light-muted); width: 100%;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">🧠</div>
+                                    <h3 style="margin-bottom: 12px; font-size: 18px;">No AI Models Yet</h3>
+                                    <p style="margin-bottom: 24px;">Add your first AI model to get started</p>
+                                    <button class="btn btn-primary" id="create-first-model">➕ Add First Model</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evolution Tab -->
+                <div class="tab-content" id="evolution-tab">
+                    <div class="evolution-container">
+                        <div class="platform-preview">
+                            <div class="platform-header">
+                                <span>🌐 Platform Preview: <strong id="current-platform">Leonardo AI</strong></span>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-sm btn-outline" id="refresh-platform"><i class="fas fa-redo"></i></button>
+                                    <button class="btn btn-sm btn-primary" id="open-platform-tab"><i class="fas fa-external-link-alt"></i></button>
+                                </div>
+                            </div>
+                            <iframe class="platform-frame" id="platform-frame" src="https://leonardo.ai/" frameborder="0"></iframe>
+                        </div>
+                        
+                        <div class="prompt-injection">
+                            <div class="card-header" style="padding: 0 0 16px 0; border: none;">
+                                <h3 class="card-title">Generated Prompt</h3>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-sm btn-outline" id="copy-all-prompt"><i class="fas fa-copy"></i></button>
+                                    <button class="btn btn-sm btn-outline" id="edit-evolution-prompt-btn"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+                            <div class="prompt-display" id="evolution-prompt-display">No prompt generated yet.</div>
+                            <div class="platform-tags" id="platform-tags-container"></div>
+                            <div class="injection-controls">
+                                <button class="btn btn-outline" id="optimize-prompt">✨ Optimize</button>
+                                <button class="btn btn-sm btn-outline" id="clear-prompt">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Output Section -->
+            <div class="output-section" id="main-output-section">
+                <div class="output-text" id="output-text"></div>
+                <div class="output-buttons">
+                    <button class="btn btn-primary" id="copy-prompt-btn"><i class="fas fa-copy"></i> <span>Copy Prompt</span></button>
+                    <button class="btn btn-secondary" id="add-favorite-btn"><i class="fas fa-star"></i> <span>Add to Favorites</span></button>
+                    <button class="btn btn-outline" id="show-favorites-btn"><i class="fas fa-book"></i> <span>View Favorites</span></button>
+                </div>
+            </div>
+            
+            <!-- Control Buttons -->
+            <div class="controls">
+                <div class="flex gap-2">
+                    <button class="btn btn-outline btn-icon-only" id="uncheck-btn" title="Uncheck All"><i class="fas fa-times"></i></button>
+                    <button class="btn btn-outline btn-icon-only" id="layout-btn" title="Toggle Layout"><i class="fas fa-columns"></i></button>
+                </div>
+                
+                <div class="compact-menu">
+                    <button class="btn btn-primary" id="project-menu-btn">
+                        <i class="fas fa-folder"></i> <span>Project</span> <i class="fas fa-chevron-up" style="font-size: 10px; margin-left: 4px;"></i>
+                    </button>
+                    <div class="compact-menu-content" id="project-menu-content">
+                        <button class="btn btn-outline w-full" id="save-btn" style="justify-content: flex-start;">
+                            <i class="fas fa-save"></i> <span>Save Project</span>
+                        </button>
+                        <button class="btn btn-outline w-full" id="load-btn" style="justify-content: flex-start;">
+                            <i class="fas fa-folder-open"></i> <span>Load Project</span>
+                        </button>
+                        <button class="btn btn-outline w-full" id="settings-btn" style="justify-content: flex-start;">
+                            <i class="fas fa-cog"></i> <span>Settings</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="add-layer-modal">
+        <div class="modal-content">
+            <div class="modal-header">Add New Layer</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Layer Name:</label>
+                    <input type="text" class="form-input" id="layer-name-input" placeholder="Enter layer name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save-layer-btn">Add Layer</button>
+                <button class="btn btn-outline" id="cancel-layer-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="add-image-modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">Add Image to Layer</div>
+            <div class="modal-body">
+                <input type="file" class="hidden" id="image-file-input" accept=".png,.jpg,.jpeg,.webp">
+                <div class="form-group">
+                    <label class="form-label">Select Image:</label>
+                    <button class="btn btn-primary w-full" id="browse-image-btn"><i class="fas fa-folder-open"></i> Browse...</button>
+                    <div id="selected-image-name" style="margin-top: 8px; font-size: 13px; color: var(--light-muted);"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Base Prompt/Description:</label>
+                    <input type="text" class="form-input" id="image-prompt-input" placeholder="Enter base description">
+                </div>
+                <div class="options-section">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="card-title" style="font-size: 16px;">Variant Options</h4>
+                        <button type="button" class="btn btn-sm btn-outline" id="add-option-btn"><i class="fas fa-plus"></i> Add Option</button>
+                    </div>
+                    <div id="image-options-container"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save-image-btn">Add Image</button>
+                <button class="btn btn-outline" id="cancel-image-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Modals for models, favorites, settings, etc. -->
+    <div class="modal" id="add-model-modal">
+        <div class="modal-content">
+            <div class="modal-header">Add New Model</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Model Name:</label>
+                    <input type="text" class="form-input" id="model-name-input" placeholder="e.g. Leonardo Diffusion XL">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Model Type:</label>
+                    <select class="form-select" id="model-type-input">
+                        <option value="General">General</option>
+                        <option value="Photorealistic">Photorealistic</option>
+                        <option value="Anime">Anime</option>
+                        <option value="3D/Render">3D/Render</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preview Image (optional):</label>
+                    <input type="file" id="model-image-input" class="hidden" accept="image/*">
+                    <button class="btn btn-outline w-full" onclick="document.getElementById('model-image-input').click()">Browse Image</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save-model-btn">Add Model</button>
+                <button class="btn btn-outline" id="cancel-model-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="favorites-modal">...</div>
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">Settings</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label" style="display: flex; align-items: center; gap: 12px;">
+                        <input type="checkbox" class="form-input" id="dark-mode-toggle" style="width: auto;">
+                        <span>🌙 Dark Mode</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="close-settings-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden inputs and context menus -->
+    <input type="file" class="hidden" id="json-file-input" accept=".json">
+    <div class="context-menu" id="image-context-menu">...</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
