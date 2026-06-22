@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vox-ops-community
+    env: python
+    rootDir: community_backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: COMMUNITY_REPO
+        value: milak-web/vox-ops
+      - key: COMMUNITY_BRANCH
+        value: main
+      - key: COMMUNITY_DATA_DIR
+        value: community
+      - key: GITHUB_TOKEN
+        sync: false

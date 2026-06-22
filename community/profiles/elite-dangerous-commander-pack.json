@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "slug": "elite-dangerous-commander-pack",
+  "name": "Elite Dangerous Commander Pack",
+  "author": "Cmdr Jameson",
+  "desc": "Essential ship controls: landing gear, hardpoints, power distribution, and FSD jumps.",
+  "commands": {
+    "landing gear": "press:l",
+    "deploy hardpoints": "press:u",
+    "engage drive": "press:j",
+    "full power engines": "press:up;press:up;press:up",
+    "full power shields": "press:left;press:left;press:left"
+  },
+  "created_at": "2026-06-22T00:00:00Z",
+  "updated_at": "2026-06-22T00:00:00Z",
+  "path": "profiles/elite-dangerous-commander-pack.json"
+}

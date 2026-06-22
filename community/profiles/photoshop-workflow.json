@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "slug": "photoshop-workflow",
+  "name": "Photoshop Workflow",
+  "author": "CreativePro",
+  "desc": "Speed up editing with voice layers. Create layers, merge, save for web, and undo.",
+  "commands": {
+    "new layer": "hotkey:ctrl+shift+n",
+    "merge layers": "hotkey:ctrl+e",
+    "save for web": "hotkey:ctrl+alt+shift+s",
+    "undo that": "hotkey:ctrl+z"
+  },
+  "created_at": "2026-06-22T00:00:00Z",
+  "updated_at": "2026-06-22T00:00:00Z",
+  "path": "profiles/photoshop-workflow.json"
+}

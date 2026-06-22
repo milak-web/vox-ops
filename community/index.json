@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-22T00:00:00Z",
+  "profiles": [
+    {
+      "slug": "elite-dangerous-commander-pack",
+      "name": "Elite Dangerous Commander Pack",
+      "author": "Cmdr Jameson",
+      "desc": "Essential ship controls: landing gear, hardpoints, power distribution, and FSD jumps.",
+      "command_count": 5,
+      "created_at": "2026-06-22T00:00:00Z",
+      "updated_at": "2026-06-22T00:00:00Z",
+      "path": "profiles/elite-dangerous-commander-pack.json"
+    },
+    {
+      "slug": "photoshop-workflow",
+      "name": "Photoshop Workflow",
+      "author": "CreativePro",
+      "desc": "Speed up editing with voice layers. Create layers, merge, save for web, and undo.",
+      "command_count": 4,
+      "created_at": "2026-06-22T00:00:00Z",
+      "updated_at": "2026-06-22T00:00:00Z",
+      "path": "profiles/photoshop-workflow.json"
+    },
+    {
+      "slug": "streamer-deck",
+      "name": "Streamer Deck",
+      "author": "TwitchMaster",
+      "desc": "OBS Controls. Switch scenes, mute mic, start/stop recording hands-free.",
+      "command_count": 4,
+      "created_at": "2026-06-22T00:00:00Z",
+      "updated_at": "2026-06-22T00:00:00Z",
+      "path": "profiles/streamer-deck.json"
+    },
+    {
+      "slug": "minecraft-survival",
+      "name": "Minecraft Survival",
+      "author": "BlockBuilder",
+      "desc": "Quick inventory management and chat commands for survival mode.",
+      "command_count": 4,
+      "created_at": "2026-06-22T00:00:00Z",
+      "updated_at": "2026-06-22T00:00:00Z",
+      "path": "profiles/minecraft-survival.json"
+    },
+    {
+      "slug": "developer-essentials",
+      "name": "Developer Essentials",
+      "author": "CodeNinja",
+      "desc": "VS Code and Terminal shortcuts. Git commit, run tests, format document.",
+      "command_count": 4,
+      "created_at": "2026-06-22T00:00:00Z",
+      "updated_at": "2026-06-22T00:00:00Z",
+      "path": "profiles/developer-essentials.json"
+    }
+  ]
+}
